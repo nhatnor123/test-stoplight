@@ -13,30 +13,6 @@ paths:
         in: path
         required: true
         description: Id of an existing user.
-    get:
-      summary: Get User Info by User ID
-      tags: []
-      responses:
-        '200':
-          description: User Found
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-              examples:
-                Get User Alice Smith:
-                  value:
-                    id: 142
-                    firstName: Alice
-                    lastName: Smith
-                    email: alice.smith@gmail.com
-                    dateOfBirth: '1997-10-31'
-                    emailVerified: true
-                    signUpDate: '2019-08-24'
-        '404':
-          description: User Not Found
-      operationId: get-users-userId
-      description: Retrieve the information of the user with the matching user ID.
     patch:
       summary: Update User Information
       operationId: patch-users-userId
@@ -145,16 +121,25 @@ paths:
       description: Create a new user.
   /nhat/test/ahihi/sklll:
     parameters: []
-    get:
-      summary: Your GET endpoint
-      tags: []
-      responses: {}
-      operationId: get-nhat-test-ahihi-id
+    post:
+      summary: ''
+      operationId: post-nhat-test-ahihi-sklll
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+      description: toi test
       requestBody:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/User'
+              type: object
+              properties:
+                wtf:
+                  type: string
 components:
   schemas:
     User:
